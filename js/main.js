@@ -17,18 +17,19 @@
 
     function scrambleGenerator() {
         let len = command.length;
-        let ret = "";
+        let bef = "", ret = "";
 
         for (let i = 0; i < 25; i++) {
-            ret += command[randomInt(0, len)];
-            ret += " ";
+            let c;
+            do {
+                c = command[randomInt(0, len)];
+            } while (bef.length != 0 && bef == c);
+
+            ret += c + " ";
+            bef = c;
         }
 
         return ret;
-    }
-
-    function randomInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
     }
 }());
 
