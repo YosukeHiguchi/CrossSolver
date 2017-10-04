@@ -10,15 +10,20 @@
     <script src="lib/bootstrap.min.css" type="text/javascript"></script>
     <script src="lib/gcube.min.js" type="text/javascript"></script>
 
+    <script src="js/const.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="row">
         <div class="col-xs-1"></div>
-        <div class="col-xs-3">
-            <button class="btn btn-primary" onclick="">scramble</button>
-            <button class="btn btn-primary" onclick="">solve</button>
+        <div class="col-xs-2">
+            <button class="btn btn-primary" id="btn_scramble">scramble</button>
+            <button class="btn btn-primary" id="btn_solve">solve</button>
+            <button class="btn btn-danger" id="btn_reset">reset</button>
+        </div>
+        <div class="col-xs-6">
+            <div id="lbl_scramble" style="font-size: 20px; margin-top: 4px;">scramble: </div>
         </div>
     </div>
 
