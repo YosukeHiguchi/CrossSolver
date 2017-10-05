@@ -46,6 +46,7 @@
                 case 82:
                     $("g-cube").gtwist(command[0 + inv]);
                     break;
+                    
                 //L
                 case 76:
                     $("g-cube").gtwist(command[1 + inv]);
