@@ -2,6 +2,7 @@
     $(document).ready(function() {
         //$('g-cube').gcube();
         //$('g-cube').gspeed(10);
+        //$("g-cube").gscramble("R R");
 
         $("#btn_scramble").on('click', function() {
             let str = scrambleGenerator();
