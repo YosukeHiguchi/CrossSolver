@@ -1,11 +1,11 @@
 (function () {
     $(document).ready(function() {
 
-        assignTasks();
+        init();
 
     });
 
-    function assignTasks() {
+    function init() {
         $("#btn_scramble").on('click', scramble);
 
         $("#btn_solve").on('click', solve);
@@ -15,10 +15,12 @@
 
 
         $(document).on("keydown", function (e) {
+            console.log(e.keyCode);
             let inv = 0;
+            let cmdlen = command.length / 3;
 
             if (event.shiftKey) {
-                inv = 7;
+                inv = cmdlen;
             }
 
             switch(e.keyCode) {
@@ -56,6 +58,29 @@
                 case 77:
                     $("g-cube").gtwist(command[6 + inv]);
                     break;
+
+                //up
+                case 38:
+                    e.preventDefault();
+                    $("g-cube").gtwist(command[7]);
+                    break;
+                //down
+                case 40:
+                    e.preventDefault();
+                    $("g-cube").gtwist(command[7 + cmdlen]);
+                    break;
+
+                //left
+                case 37:
+                    e.preventDefault();
+                    $("g-cube").gtwist(command[8]);
+                    break;
+                //right
+                case 39:
+                    e.preventDefault();
+                    $("g-cube").gtwist(command[8 + cmdlen]);
+                    break;
+
             }
 
             return;
