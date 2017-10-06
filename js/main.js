@@ -38,7 +38,7 @@
             let inv = 0;
 
             if (event.shiftKey) {
-                inv = 6;
+                inv = 7;
             }
 
             switch(e.keyCode) {
@@ -46,7 +46,7 @@
                 case 82:
                     $("g-cube").gtwist(command[0 + inv]);
                     break;
-                    
+
                 //L
                 case 76:
                     $("g-cube").gtwist(command[1 + inv]);
@@ -70,6 +70,11 @@
                 //B
                 case 66:
                     $("g-cube").gtwist(command[5 + inv]);
+                    break;
+
+                //M
+                case 77:
+                    $("g-cube").gtwist(command[6 + inv]);
                     break;
             }
 
