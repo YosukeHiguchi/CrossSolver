@@ -14,8 +14,8 @@
 
 
         $(document).on("keydown", function (e) {
-            let inv = 0;
-            let cmdlen = COMMAND.length / 3;
+            var inv = 0;
+            var cmdlen = COMMAND.length / 3;
 
             if (event.shiftKey) {
                 inv = cmdlen;
@@ -24,6 +24,7 @@
             switch(e.keyCode) {
                 //R
                 case 82:
+                    R();
                     $("g-cube").gtwist(COMMAND[0 + inv]);
                     break;
 
