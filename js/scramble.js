@@ -6,13 +6,13 @@ function scramble() {
 }
 
 function scrambleGenerator() {
-    let len = command.length;
+    let len = SCRAMBLE.length;
     let bef = "", ret = "";
 
     for (let i = 0; i < 25; i++) {
         let c;
         do {
-            c = command[randomInt(0, len)];
+            c = SCRAMBLE[randomInt(0, len)];
         } while (bef.length != 0 && bef == c);
 
         ret += c + " ";
