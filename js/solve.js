@@ -25,7 +25,8 @@ var cube = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1],
     [2, 2, 2, 2, 2, 2, 2, 2, 2],
     [3, 3, 3, 3, 3, 3, 3, 3, 3],
-    [4, 4, 4, 4, 4, 4, 4, 4, 4],
+    [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    //[4, 4, 4, 4, 4, 4, 4, 4, 4],
     [5, 5, 5, 5, 5, 5, 5, 5, 5],
 ];
 var copy = [];
@@ -36,7 +37,9 @@ function solve() {
 }
 
 function R() {
+    console.log("before");
     dumpCube();
+
     copyArray();
 
     swap(0, 6, 1, 6); swap(0, 7, 1, 7); swap(0, 8, 1, 8);
@@ -44,6 +47,32 @@ function R() {
     swap(5, 6, 3, 6); swap(5, 7, 3, 7); swap(5, 8, 3, 8);
     swap(1, 6, 5, 8); swap(1, 7, 5, 7); swap(1, 8, 5, 6);
 
+    swap(2, 0, 2, 6); swap(2, 1, 2, 3);
+    swap(2, 2, 2, 0); swap(2, 5, 2, 1);
+    swap(2, 8, 2, 2); swap(2, 7, 2, 5);
+    swap(2, 6, 2, 8); swap(2, 3, 2, 7);
+
+    console.log("after");
+    dumpCube();
+}
+
+function L() {
+    console.log("before");
+    dumpCube();
+
+    copyArray();
+
+    swap(0, 0, 3, 0); swap(0, 1, 3, 1); swap(0, 2, 3, 2);
+    swap(1, 0, 0, 0); swap(1, 1, 0, 1); swap(1, 2, 0, 2);
+    swap(5, 0, 1, 0); swap(5, 1, 1, 1); swap(5, 2, 1, 2);
+    swap(3, 0, 5, 0); swap(3, 1, 5, 1); swap(3, 2, 5, 2);
+
+    swap(4, 0, 4, 6); swap(4, 1, 4, 3);
+    swap(4, 2, 4, 0); swap(4, 5, 4, 1);
+    swap(4, 8, 4, 2); swap(4, 7, 4, 5);
+    swap(4, 6, 4, 8); swap(4, 3, 4, 7);
+
+    console.log("after");
     dumpCube();
 }
 
@@ -63,12 +92,12 @@ function copyArray() {
 }
 
 function dumpCube() {
-    var str = "                           ";
+    var str = "                 ";
     for (var i = 0; i < 9; i++) {
         str += cube[4][i] + "  ";
         if (i % 3 == 2) {
             console.log(str);
-            str = i + "                          ";
+            str = i + "                ";
         }
     }
 
@@ -92,13 +121,12 @@ function dumpCube() {
         console.log(u + str);
     }
 
-    var str = "                           ";
+    str = "                 ";
     for (var i = 0; i < 9; i++) {
         str += cube[2][i] + "  ";
         if (i % 3 == 2) {
             console.log(str);
-            str = i + "                          ";
+            str = i + "                ";
         }
     }
-    console.log("");
 }

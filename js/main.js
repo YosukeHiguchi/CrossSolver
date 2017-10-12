@@ -30,6 +30,7 @@
 
                 //L
                 case 76:
+                    L();
                     $("g-cube").gtwist(COMMAND[1 + inv]);
                     break;
 
