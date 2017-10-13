@@ -1,5 +1,9 @@
 (function () {
+    var cd;
+
     $(document).ready(function() {
+
+        cd = new CubeData();
 
         init();
 
@@ -8,9 +12,10 @@
     function init() {
         $("#btn_scramble").on('click', scramble);
 
-        $("#btn_solve").on('click', solve);
+//        $("#btn_solve").on('click', solve);
 
         $("#btn_reset").on('click', reset);
+
 
 
         $(document).on("keydown", function (e) {
@@ -24,18 +29,19 @@
             switch(e.keyCode) {
                 //R
                 case 82:
-                    R();
+                    cd.twist(COMMAND[0 + inv]);
                     $("g-cube").gtwist(COMMAND[0 + inv]);
                     break;
 
                 //L
                 case 76:
-                    L();
+                    cd.twist(COMMAND[1 + inv]);
                     $("g-cube").gtwist(COMMAND[1 + inv]);
                     break;
 
                 //U
                 case 85:
+                    cd.twist(COMMAND[2 + inv]);
                     $("g-cube").gtwist(COMMAND[2 + inv]);
                     break;
 
